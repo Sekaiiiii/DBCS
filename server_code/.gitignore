@@ -1,0 +1,18 @@
+# 忽略node_modules
+/node_modules/
+# 忽略public
+/public/
+# 忽略uploads
+/uploads/
+# 忽略eslint
+.eslintrc.js
+# 忽略shell/db_dump
+/shell/db_dump/
+# 忽略shell/db_log
+/shell/db_log
+# 忽略dist
+/dist/
+# 忽略file
+/file/
+# 忽略json文件
+/config/release_conf.json
