@@ -7,7 +7,7 @@ const resObj = require('../tool/resObj.js');
 const router = express.Router();
 
 
-router.use("/", function (req, res) {
+router.use("/", function (req, res, next) {
     exec(path.join(__dirname, "..", "shell", "db_dump.sh"), (err, stdout, stderr) => {
         if (err) {
             console.error(err);
