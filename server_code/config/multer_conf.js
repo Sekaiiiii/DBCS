@@ -1,9 +1,3 @@
-/*
- * author:谢奇
- * create_day:2020-05-05
- * modified_day:2020-05-05
- * function:multer上传文件中间件的配置文件
- */
 'use strict'
 const multer = require("multer");
 

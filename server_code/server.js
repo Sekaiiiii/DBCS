@@ -1,19 +1,14 @@
-/*
- * author:谢奇
- * create_day:2020-04-20
- * modified_day:2020-05-05
- * function:配置服务器监听端口，全局中间件。
- */
 "use strict"
 
 //引入相关包
 const express = require("express");
 const path = require("path");
 const session = require("express-session");
+const body_parser = require('body-parser');
 //引入配置文件
 const app_conf = require("./config/app_conf.js");
 const session_conf = require("./config/session_conf.js");
-const body_parser = require('body-parser');
+
 //创建app实例
 const app = express();
 
