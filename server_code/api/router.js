@@ -169,6 +169,18 @@ router.use('*', function (err, req, res, next) {
         case '301':
             res.send(resObj.fail('301', '传入参数的格式有误'));
             break;
+        case '603':
+            res.send(resObj.fail("603", "找不到对应的压缩文件"));
+            break;
+        case '604':
+            res.send(resObj.fail("604", "解压过程出现异常错误"));
+            break;
+        case '605':
+            res.send(resObj.fail("605", "找不到恢复数据库的sql文件"));
+            break;
+        case '606':
+            res.send(resObj.fail("606", "恢复数据库的过程出现异常错误"));
+            break;
         case '999':
             res.send(resObj.fail('999', '出乎意料的错误'));
             break;
