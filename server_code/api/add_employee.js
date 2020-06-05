@@ -48,7 +48,7 @@ router.post("/", (req, res, next) => {
         req.body.date_of_enrollment,
         req.body.operating_post,
         req.body.duty,
-        req.body.work_status,
+        req.body.work_statu,
         req.body.superior_employee_id,
         req.body.department_id
     ];

@@ -15,8 +15,10 @@ router.post("/", (req, res, next) => {
     let param_list = [];
     let set_obj = {};
     if (req.body.password) set_obj.password = req.body.password;
+    if (req.body.role) set_obj.role = req.body.role;
     if (req.body.employee_id) set_obj.employee_id = req.body.employee_id;
     if (req.body.name) set_obj.name = req.body.name;
+
     param_list.push(set_obj);
     param_list.push(req.body.id);
     pool.query(sql, param_list, (err, result, fileds) => {

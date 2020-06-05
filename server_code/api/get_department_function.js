@@ -15,31 +15,13 @@ router.get("/", (req, res, next) => {
     select 
         *
     from 
-        function
+        department_has_function,function
     where
-        id >= 1
-        ${req.query.name ? 'and name like ?' : ''}
-        ${req.query.description ? 'and description like ?' : ''}
-    limit
-        ?
-    offset
-        ?
+        department_has_function.function_id = function.id and
+        department_has_function.department_id = ?    
     `;
 
-    let param_list = [];
-
-    if (req.query.name) param_list.push('%' + req.query.name + '%');
-    if (req.query.description) param_list.push('%' + req.query.description + '%');
-
-    let limit = 10;
-    let offset = 0;
-    if (req.query.ppn) limit = req.query.ppn * 1;
-    if (req.query.page) offset = limit * (req.query.page - 1);
-    param_list.push(limit);
-    param_list.push(offset);
-
-
-    pool.query(sql, param_list, (err, function_list, fileds) => {
+    pool.query(sql, req.query.department_id, (err, function_list, fileds) => {
         if (err) {
             console.error(err);
             return next(new Error('200'));

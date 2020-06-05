@@ -12,13 +12,15 @@ router.get("/", (req, res, next) => {
 //业务处理
 router.get("/", (req, res, next) => {
     let sql = `
-    select 
-        *
-    from 
-        department
+    select
+        department.*,
+        s_department.name as superior_department_name
+    from
+        department as department
+        left join department as s_department on department.superior_department_id = s_department.id
     where
-        id >= 1
-        ${req.query.name ? 'and name like ?' : ''}
+        department.id >= 1
+        ${req.query.name ? 'and department.name like ?' : ''}
     limit
         ?
     offset

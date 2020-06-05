@@ -25,7 +25,7 @@ router.post("/", (req, res, next) => {
         }
 
         res.send(resObj.success({
-            'msg': '删除部门成功'
+            'msg': '删除部门功能成功'
         }))
     })
 

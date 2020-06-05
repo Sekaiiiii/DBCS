@@ -30,7 +30,13 @@ router.post("/", (req, res, next) => {
         req.session.employee_id = user_list[0].employee_id;
 
         res.send(resObj.success({
-            'msg': '登录成功'
+            msg: '登录成功',
+            user_info: {
+                user_id: user_list[0].id,
+                name: user_list[0].name,
+                role: user_list[0].role,
+                employee_id: user_list[0].employee_id
+            }
         }))
     })
 

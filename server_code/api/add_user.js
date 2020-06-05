@@ -17,7 +17,7 @@ router.post("/", (req, res, next) => {
     let param_list = [
         req.body.name,
         req.body.password,
-        1,
+        req.body.role,
         req.body.employee_id ? req.body.employee_id : null
     ]
     pool.query(sql, [param_list], (err, result, fileds) => {

@@ -11,8 +11,10 @@ router.post("/", (req, res, next) => {
 //业务处理
 router.get("/", (req, res, next) => {
     res.send(resObj.success({
-        'msg': '获取登录状态成功',
-        'data': {
+        msg: '获取登录状态成功',
+        is_login: req.session.is_login ? req.session.is_login : false,
+        user_info: {
+            user_id: req.session.user_id,
             name: req.session.name,
             role: req.session.role,
             employee_id: req.session.employee_id
