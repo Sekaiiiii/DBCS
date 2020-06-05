@@ -47,7 +47,7 @@ router.post("/", function (req, res, next) {
         },
         function judgeSQLFileExist(done) {
             //对tar_path进行解析
-            let sql_name = req.body.name.substr(2, 17) + ".sql";
+            let sql_name = req.body.name.substr(8, 17) + ".sql";
             let sql_path = path.join(__dirname, "..", "shell", "db_dump", sql_name);
             fs.access(sql_path, function (err) {
                 if (err) {
