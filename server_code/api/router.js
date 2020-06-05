@@ -47,6 +47,7 @@ router.use('/set_user_permission', verify_login);
 router.use('/mysql_dump', verify_login);
 router.use('/get_mysql_dump', verify_login);
 router.use('/del_mysql_dump', verify_login);
+router.use('/recovery', verify_login);
 
 // 管理员权限验证
 router.use('/add_user', verify_admin_permission);
@@ -74,6 +75,7 @@ router.use('/set_user_permission', verify_root_permission);
 router.use('/mysql_dump', verify_root_permission);
 router.use('/get_mysql_dump', verify_root_permission);
 router.use('/del_mysql_dump', verify_root_permission);
+router.use('/recovery', verify_root_permission);
 
 // 通过各种验证交给具体业务板块处理
 router.use('/get_login_state', require('./get_login_state.js'));
@@ -111,7 +113,7 @@ router.use('/set_user_permission', require('./set_user_permission.js'));
 router.use('/mysql_dump', require('./mysql_dump.js'));
 router.use('/get_mysql_dump', require('./get_mysql_dump.js'));
 router.use('/del_mysql_dump', require('./del_mysql_dump.js'));
-
+router.use('/recovery', require('./recovery.js'));
 
 // 统一的错误处理
 router.use('*', function (err, req, res, next) {
