@@ -11,7 +11,7 @@ const async = require("async");
 const fs = require("fs");
 const { exec } = require("child_process");
 
-const mysql_conf = require("../../config/mysql_conf.js");
+const mysql_conf = require("../config/mysql_conf.js");
 
 const resObj = require('../tool/resObj.js');
 const router = express.Router();
